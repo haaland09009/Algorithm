@@ -1,7 +1,7 @@
 // https://school.programmers.co.kr/learn/courses/30/lessons/12954
 import java.util.*;
 class Solution {
-    public long[] solution(int x, int n) {
+    public long[] solution(int x, int n) { 
         long[] answer = {};
         
         List<Long> list = new ArrayList<>();
