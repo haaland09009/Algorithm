@@ -1,6 +1,6 @@
 // https://school.programmers.co.kr/learn/courses/30/lessons/68935
  
-import java.util.*;
+import java.util.*; 
 class Solution {
     public int solution(int n) {
         int answer = 0;
