@@ -14,8 +14,8 @@ class Solution {
                 list.add(a);
             }
             
-            Integer min_value = Collections.min(list);
-            list.remove(min_value);
+            Integer minValue = Collections.min(list);
+            list.remove(minValue);
             
             answer = new int[list.size()];
             for(int i=0; i<list.size(); i++) {
