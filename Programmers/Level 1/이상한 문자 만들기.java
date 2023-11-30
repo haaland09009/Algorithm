@@ -1,6 +1,6 @@
 // https://school.programmers.co.kr/learn/courses/30/lessons/12930
 class Solution {
-    public String solution(String s) {
+    public String solution(String s) { 
         String answer = "";
         
         String[] arr = s.split("");
