@@ -1,3 +1,53 @@
+// https://school.programmers.co.kr/learn/courses/30/lessons/150370
+// 수정한 코드
+import java.util.*;
+class Solution {
+    public int[] solution(String today, String[] terms, String[] privacies) {
+        int[] answer = {};
+
+        // 오늘 날짜
+        int nowDate = getDate(today);
+    
+        Map<String, Integer> map = new HashMap<>();
+        for (int i=0; i<terms.length; i++) {
+            int period = Integer.parseInt(terms[i].split(" ")[1]);
+            map.put(terms[i].split(" ")[0], period);
+        }
+        
+        List<Integer> list = new ArrayList<>();
+        for (int i=0; i<privacies.length; i++) {
+            String day = privacies[i].split(" ")[0];
+            String title = privacies[i].split(" ")[1];
+            
+            int privacyDate = getDate(day);
+            
+            if (privacyDate + map.get(title) * 28 <= nowDate)
+                list.add(i+1);
+        }
+      
+        answer = new int[list.size()];
+        for (int i=0; i<list.size(); i++) {
+            answer[i] = list.get(i);
+        }
+   
+        return answer;
+    }
+    
+    // 날짜 구하기
+    private int getDate(String today) {
+        
+        String[] date = today.split("\\.");
+        int year = Integer.parseInt(date[0]);
+        int month = Integer.parseInt(date[1]);
+        int day = Integer.parseInt(date[2]);  
+        
+        return ((year-1) * 28 * 12) + ((month-1) * 28) + day;     
+    }
+}
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////
 // 처음 해결한 풀이
 import java.util.*;
 class Solution {
