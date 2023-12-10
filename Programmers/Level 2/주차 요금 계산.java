@@ -21,10 +21,7 @@ class Solution {
             if (map.get(key).size() % 2 != 0) {
                 map.get(key).add("23:59");
             }
-        }
-        // 기본 요금: result <= 기본 시간 -> 5000
-        // 초과 요금 : 기본금 5000 +  Math.ceil((result - 기본 시간) / 단위 시간) x 단위 요금
-        // fees : [기본 시간, 기본 요금, 단위 시간, 단위 요금]        
+        }     
         
         Map<String, Integer> result = new HashMap<>();
         for (String key : map.keySet()) {
