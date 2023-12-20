@@ -41,20 +41,20 @@ class Solution {
 --------------------------------------------------------------------------
 # 2. 더 빠른 코드
 
-import java.util.*;
-class Solution {
-    public int solution(int n) {
-        int answer = 0;
-        int bitCount = Integer.bitCount(n);
+// import java.util.*;
+// class Solution {
+//     public int solution(int n) {
+//         int answer = 0;
+//         int bitCount = Integer.bitCount(n);
         
-        while (true) {
-            n++;
-            if (bitCount == Integer.bitCount(n)) {
-                answer = n;
-                break;
-            }
-        }
+//         while (true) {
+//             n++;
+//             if (bitCount == Integer.bitCount(n)) {
+//                 answer = n;
+//                 break;
+//             }
+//         }
         
-        return answer;
-    }
-}
+//         return answer;
+//     }
+// }
