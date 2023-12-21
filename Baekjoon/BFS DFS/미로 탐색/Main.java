@@ -8,7 +8,7 @@ import java.util.StringTokenizer;
 
 public class Main {
 	static int n, m;
-	static int[][] arr;
+	static int[][] arr; 
 	static int[][] visited;
 	static int[] dx = {0,0,-1,1};
 	static int[] dy = {-1,1,0,0};
