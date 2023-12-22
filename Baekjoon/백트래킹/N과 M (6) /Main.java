@@ -25,8 +25,7 @@ public class Main {
 		
 		st = new StringTokenizer(br.readLine(), " ");
 		for (int i=0; i<n; i++) {
-			int num = Integer.parseInt(st.nextToken());
-			arr[i] = num;
+			arr[i] = Integer.parseInt(st.nextToken());
 		}
 		
 		Arrays.sort(arr);
@@ -38,7 +37,7 @@ public class Main {
 	public static void dfs(int num, int depth) {
 		if (depth == m) {
 			for (int val : result) {
-				sb.append(val + " ");
+				sb.append(val).append(" ");
 			}
 			sb.append("\n");
 			return;
