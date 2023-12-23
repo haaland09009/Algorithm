@@ -28,22 +28,18 @@ class Solution {
             list.add(tmp);
         }
         
-        list.sort(new Comparator<ArrayList<String>>() {
-            @Override
-            public int compare(ArrayList<String> o1, ArrayList<String> o2) {
-          
-                int headCompare = o1.get(0).toLowerCase().compareTo(o2.get(0).toLowerCase());
+        list.sort((o1, o2) -> {
+            int headCompare = o1.get(0).toLowerCase().compareTo(o2.get(0).toLowerCase());
 
-                if (headCompare != 0) {
-                    return headCompare;
-                }
-
-                int num1 = Integer.parseInt(o1.get(1));
-                int num2 = Integer.parseInt(o2.get(1));
-
-                return Integer.compare(num1, num2);
+            if (headCompare != 0) {
+                return headCompare;
             }
-        });        
+
+            int num1 = Integer.parseInt(o1.get(1));
+            int num2 = Integer.parseInt(o2.get(1));
+
+            return Integer.compare(num1, num2);
+        });
         
         answer = new String[files.length];
         for (int i = 0; i < list.size(); i++) {
