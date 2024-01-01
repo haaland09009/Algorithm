@@ -3,7 +3,7 @@ import java.util.*;
 class Solution {
     public int[] solution(String s) {
         int[] answer = {};
-        
+         
         s = s.substring(2, s.length()-2);
         String[] arr = s.split("},\\{");
         
