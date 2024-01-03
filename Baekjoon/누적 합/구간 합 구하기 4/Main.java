@@ -1,7 +1,7 @@
 //https://www.acmicpc.net/problem/11659
 // 메모리 59624kb 시간 700ms		
 import java.io.BufferedReader;
-import java.io.IOException;
+import java.io.IOException; 
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
