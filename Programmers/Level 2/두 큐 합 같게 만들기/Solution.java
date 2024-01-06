@@ -4,7 +4,7 @@ class Solution {
     public int solution(int[] queue1, int[] queue2) {
         int answer = 0;
         
-        long sum1 = getSum(queue1);
+        long sum1 = getSum(queue1); 
         long sum2 = getSum(queue2);
         long midSum = (sum1 + sum2) / 2;
         
