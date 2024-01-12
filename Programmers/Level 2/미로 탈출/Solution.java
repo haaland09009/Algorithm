@@ -5,7 +5,7 @@ class Solution {
         int answer = 0;
         
         int path1 = bfs('S', 'L', maps);
-        int path2 = bfs('L', 'E', maps);
+        int path2 = bfs('L', 'E', maps); 
         
         if (path1 != -1 && path2 != -1) 
             return path1 + path2;
