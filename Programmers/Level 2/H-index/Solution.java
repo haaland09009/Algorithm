@@ -1,6 +1,6 @@
 // https://school.programmers.co.kr/learn/courses/30/lessons/42747
 import java.util.*;
-class Solution {
+class Solution { 
     public int solution(int[] citations) {
         int answer = 0;
         
