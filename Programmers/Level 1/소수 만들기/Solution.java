@@ -1,50 +1,47 @@
 // https://school.programmers.co.kr/learn/courses/30/lessons/12977
-import java.util.*;
 class Solution {
-    public boolean[] visited;
-    public int[] arr;
-    public int sum;
-    public int answer;
-    
+    static boolean[] visited;
+    static int[] arr;
+    static int n;
+    static int answer;
     public int solution(int[] nums) {
-       
+        
+        n = nums.length;
         visited = new boolean[nums.length];
         arr = new int[3];
-        dfs(0, nums, 0);
-
+        
+        dfs(0, 0, nums);
         return answer;
     }
     
-    public void dfs(int depth, int[] nums, int start) {
+    private void dfs(int start, int depth, int[] nums) {
         if (depth == 3) {
-            for (int a : arr) {
-                sum += a;
+            int sum = 0;
+            for (int val : arr) {
+                sum += val;
             }
-            if (isPrimeNumber(sum)) {
+            if (isPrimeNumber(sum))
                 answer++;
-            }
-            sum = 0;
             return;
         }
-        for (int i=start; i<nums.length; i++) {
+        for (int i=start; i<n; i++) {
             if (!visited[i]) {
                 visited[i] = true;
                 arr[depth] = nums[i];
-                dfs(depth+1, nums, i);
+                dfs(i, depth+1, nums);
                 visited[i] = false;
             }
         }
     }
     
     
-    public boolean isPrimeNumber(int n) {
-        if (n <= 1) 
+    private boolean isPrimeNumber(int number) {
+        if (number <= 1) 
             return false;
-        for (int i=2; i<(int)(Math.sqrt(n)) + 1; i++) {
-            if (n % i == 0) 
+        for (int i=2; i< ((int) Math.sqrt(number)) + 1; i++) {
+            if (number % i == 0) 
                 return false;
         }
         return true;
     }
-    
 }
