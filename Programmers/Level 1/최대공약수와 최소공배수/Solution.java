@@ -9,13 +9,14 @@ class Solution {
         return answer;
     }
     
-    public static int gcd(int a, int b) {
-        if (b == 0)
+    private int gcd(int a, int b) {
+        if (b % a == 0)
             return a;
-        return gcd(b, a % b);
+        return gcd(b % a, a);
     }
     
-    public static int lcm(int a, int b) {
+    private int lcm(int a, int b) {
         return a * b / gcd(a, b);
     }
+    
 }
