@@ -21,3 +21,37 @@ class Solution {
         return answer;
     }
 }
+
+
+// class Solution {
+//     public int solution(String s) {
+//         int answer = 0;
+        
+//         char firstWord = s.charAt(0);
+//         int cnt = 0;
+//         int remain_cnt = 0;
+//         for (int i=0; i<s.length(); i++) {
+//             if (s.charAt(i) == firstWord) {
+//                 cnt++;
+//             } else {
+//                 remain_cnt++;
+//             }
+//             if (cnt == remain_cnt) {
+//                 answer++;
+//                 if (i < s.length() - 1) {
+//                     firstWord = s.charAt(i+1);
+//                 }
+//                 cnt = 0;
+//                 remain_cnt = 0;                
+//             }
+//         }
+        
+//         if (cnt > 0) {
+//             answer++;
+//         }
+        
+      
+        
+//         return answer;
+//     }
+// }
