@@ -1,23 +1,22 @@
 // https://school.programmers.co.kr/learn/courses/30/lessons/67256
-import java.util.*;
 class Solution {
     int[][] pad = {
-        {3,1}, // 0
-        {0,0}, // 1
-        {0,1},
-        {0,2},
-        {1,0},
-        {1,1},
-        {1,2},
-        {2,0},
-        {2,1},
-        {2,2} // 9
-     };
+        {3, 1},
+        {0, 0},
+        {0, 1},
+        {0, 2},
+        {1, 0},
+        {1, 1},
+        {1, 2},
+        {2, 0},
+        {2, 1},
+        {2, 2}
+    };
     public String solution(int[] numbers, String hand) {
         String answer = "";
         
-        int[] leftPos = {3,0};
-        int[] rightPos = {3,2};
+        int[] leftPos = {3, 0};
+        int[] rightPos = {3, 2};
         
         for (int num : numbers) {
             if (num == 1 || num == 4 || num == 7) {
@@ -36,10 +35,10 @@ class Solution {
                 } else {
                     if (hand.equals("left")) {
                         answer += "L";
-                        leftPos = pad[num];                        
+                        leftPos = pad[num];
                     } else {
                         answer += "R";
-                        rightPos = pad[num];                        
+                        rightPos = pad[num];
                     }
                 }
             }
@@ -47,9 +46,11 @@ class Solution {
         
         return answer;
     }
+    
     private int getDist(int[] pos, int num) {
         return Math.abs(pos[0] - pad[num][0]) + Math.abs(pos[1] - pad[num][1]);
     }
+    
 }
 
 // import java.util.*;
