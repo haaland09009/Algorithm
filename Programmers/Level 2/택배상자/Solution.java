@@ -1,21 +1,20 @@
 // https://school.programmers.co.kr/learn/courses/30/lessons/131704
-import java.util.*; 
+import java.util.*;
 class Solution {
     public int solution(int[] order) {
         int answer = 0;
-        int i = 1;
         
+        int i = 1;
         int cnt = 0;
-        Stack<Integer> container = new Stack<>();
+        Stack<Integer> stack  = new Stack<>();
         while (i != order.length+1) {
-            container.push(i);
-            while (!container.isEmpty() && container.peek() == order[cnt]) {
+            stack.add(i);
+            while (!stack.isEmpty() && stack.peek() == order[cnt]) {
+                stack.pop();
                 cnt++;
-                container.pop();
             }
             i++;
         }
-        
         answer = cnt;
         return answer;
     }
