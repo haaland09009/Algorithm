@@ -2,21 +2,21 @@
 import java.util.*;
 class Solution {
     public int solution(int[] people, int limit) {
-        int answer = 0;
-        
+        int cnt = 0;
+
         Arrays.sort(people);
         
-        int start = 0; int end = people.length-1;
+        int start = 0;
+        int end = people.length - 1; 
         
         while (start < end) {
             if (people[start] + people[end] <= limit) {
-                answer += 1;
-                start += 1;
+                cnt++;
+                start++;
             }
-            end -= 1;
+            end--;
         }
         
-        
-        return people.length - answer;
+        return people.length - cnt;
     }
 }
