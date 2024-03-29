@@ -3,44 +3,48 @@ import java.util.*;
 class Solution {
     public int solution(String s) {
         int answer = 0;
-       
-        for (int i=0; i<s.length(); i++) {
-            if (isCorrect(s.substring(i) + s.substring(0, i))) {
+        
+        int length = s.length();
+        
+        for (int i=0; i<length; i++) {
+            String word = s.substring(i) + s.substring(0, i);
+            if (isCorrect(word)) {
                 answer++;
             }
         }
+        
         return answer;
     }
     
-    
-    public boolean isCorrect(String s) {
+    private boolean isCorrect(String s) {
         
-        boolean result = true;
         Stack<Character> stack = new Stack<>();
         
         for (int i=0; i<s.length(); i++) {
-            if ((s.charAt(i) == '(') || (s.charAt(i) == '[') || (s.charAt(i) == '{')) {
-                stack.push(s.charAt(i));
+            char c = s.charAt(i);
+            if (c == '(' || c == '[' || c == '{') {
+                stack.push(c);
             } else {
-                if (stack.size() == 0) {
-                    result = false;
-                    break;
+                if (stack.isEmpty()) {
+                    return false;
                 } else {
-                    if ((s.charAt(i) == ')') && (stack.peek() == '(')) {
+                    if (c == ')' && stack.peek() == '(') {
                         stack.pop();
-                    } else if ((s.charAt(i) == ']') && (stack.peek() == '[')) {
+                    } else if (c == ']' && stack.peek() == '[') {
                         stack.pop();
-                    } else if ((s.charAt(i) == '}') && (stack.peek() == '{')) {
+                    } else if (c == '}' && stack.peek() == '{') {
                         stack.pop();
+                    } else {
+                        return false;
                     }
-                }   
+                }
+                
             }
         }
         
         if (!stack.isEmpty()) {
-            result = false;
+            return false;
         }
-        return result;
+        return true;
     }
-    
 }
