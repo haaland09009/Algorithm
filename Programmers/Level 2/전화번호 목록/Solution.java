@@ -10,16 +10,15 @@ class Solution {
         }
         
         for (String phone : phone_book) {
-            String str = "";
+            StringBuilder sb = new StringBuilder();
             for (int i=0; i<phone.length(); i++) {
-                str += phone.substring(i, i+1);
-                if (map.containsKey(str) && !str.equals(phone)) {
+                sb.append(phone.substring(i, i+1));
+                if (map.containsKey(sb.toString()) && !phone.equals(sb.toString())) {
                     answer = false;
                     break;
                 }
             }
         }
-
         return answer;
     }
 }
