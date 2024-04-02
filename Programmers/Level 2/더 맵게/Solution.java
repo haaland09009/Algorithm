@@ -23,3 +23,33 @@ class Solution {
         return answer;
     }
 }
+
+
+/*
+import java.util.*;
+class Solution {
+    public int solution(int[] scoville, int K) {
+        int answer = 0;
+        Queue<Integer> queue = new PriorityQueue<>();
+        
+        for (int s : scoville) {
+            queue.add(s);
+        }
+        
+        while (queue.peek() < K) {
+            int first = queue.poll();
+            int second = queue.poll();
+            int mix = first + second * 2;
+            queue.add(mix);
+            answer++;
+            if (queue.size() <= 1 && queue.peek() < K) {
+                answer = -1;
+                break;
+            } 
+        }
+     
+        
+        return answer;
+    }
+}
+*/
