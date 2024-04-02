@@ -3,6 +3,42 @@ import java.util.*;
 class Solution {
     public int solution(String skill, String[] skill_trees) {
         int answer = 0;
+      
+        for (String skill_tree : skill_trees) {
+            List<Character> list = stringToList(skill);
+            boolean result = true;
+            for (int i=0; i<skill_tree.length(); i++) {
+                char c = skill_tree.charAt(i);
+                if (list.contains(c) && c == list.get(0)) {
+                    list.remove(0);
+                } else if (list.contains(c) && c != list.get(0)) {
+                    result = false;
+                    break;
+                }
+            }
+            if (result) {
+                answer++;
+            }
+        }  
+        return answer;
+    }
+    
+    private List<Character> stringToList(String str) {
+        List<Character> list = new ArrayList<>();
+        for (int i=0; i<str.length(); i++) {
+            list.add(str.charAt(i));
+        }
+        return list;
+    }
+}
+
+
+
+/*
+import java.util.*;
+class Solution {
+    public int solution(String skill, String[] skill_trees) {
+        int answer = 0;
         
         String[] skill_list = skill.split("");
         
@@ -30,3 +66,4 @@ class Solution {
         return answer;
     }
 }
+*/
