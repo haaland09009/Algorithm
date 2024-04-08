@@ -1,5 +1,5 @@
 // https://school.programmers.co.kr/learn/courses/30/lessons/12951
-class Solution {
+class Solution { 
     public String solution(String s) {
         s = s.toLowerCase();
         StringBuilder sb = new StringBuilder();
