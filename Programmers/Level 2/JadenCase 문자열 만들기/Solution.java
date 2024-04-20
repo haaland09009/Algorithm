@@ -4,7 +4,7 @@ class Solution {
         s = s.toLowerCase();
         StringBuilder sb = new StringBuilder();
         
-        int idx = 0;
+        int idx = 0; 
         for (int i=0; i<s.length(); i++) {
             String word = s.substring(i, i+1);
             if (word.equals(" ")) {
