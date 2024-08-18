@@ -4,20 +4,18 @@ class Solution {
     public int[] solution(long n) {
         int[] answer = {};
         
+        String[] arr = String.valueOf(n).split("");
+        
         List<Integer> list = new ArrayList<>();
-        
-        String s = String.valueOf(n);
-        String[] arr = s.split("");
-        
-        for(int i=arr.length-1; i>=0; i--) {
+        for (int i=arr.length-1; i>=0; i--) {
             list.add(Integer.parseInt(arr[i]));
         }
         
         answer = new int[list.size()];
-        for(int i=0; i<list.size(); i++) {
+        for (int i=0; i<list.size(); i++) {
             answer[i] = list.get(i);
         }
-    
+   
         return answer;
     }
 }
